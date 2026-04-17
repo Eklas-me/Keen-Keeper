@@ -1,34 +1,79 @@
-# 👥 KeenKeeper — Keep Your Friendships Alive
+# 👥 KeenKeeper — Nurture Your Friendships
 
-**KeenKeeper** is a modern, responsive friendship management application designed to help users track and nurture their relationships. Whether it's a quick text, a phone call, or a video chat, KeenKeeper ensures you nunca let a meaningful connection slip away.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-id/deploy-status)](https://keen-keeper.netlify.app)
 
-## 🚀 Live Link
-[View Live Site](https://keen-keeper.netlify.app) *(Update this link with your actual deployment URL)*
+**KeenKeeper** is a sleek, modern Friendship Management Tool built with **React** and **Tailwind CSS**. It helps users stay connected with their friends by tracking interactions, setting relationship goals, and providing insightful analytics about their social habits.
 
-## ✨ Key Features
-- **📊 Friendship Analytics:** Visual representation of your interaction history (Call, Text, Video) using interactive Pie Charts.
-- **📜 Smart Timeline:** A searchable and sortable history of all your check-ins, allowing you to filter by type and see exactly when you last reached out.
-- **⚡ Quick Check-In:** Instantly log calls, texts, or video chats with a single click from the friend profile page.
-- **📱 Fully Responsive:** Optimized for mobile, tablet, and desktop views for a seamless experience on any device.
-- **✅ Status Tracking:** Visual indicators (Overdue, Almost Due, On-track) to help prioritize which friends need attention.
-
-## 🛠️ Technologies Used
-- **Core:** React 18, Vite
-- **Navigation:** React Router DOM v6
-- **Styling:** Tailwind CSS
-- **Visualization:** Recharts
-- **Icons:** React Icons (Feather & FontAwesome)
-- **Notifications:** React Hot Toast
-- **Deployment:** Netlify / Vercel
-
-## 📸 Screenshots
-*(You can add screenshots here to make it look even better!)*
-
-## 🛠️ How to Run Locally
-1. Clone the repository: `git clone <repo-url>`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open `http://localhost:5173` in your browser.
+## 🚀 [Live Demo](https://keen-keeper.netlify.app)
 
 ---
-*Created as part of Programming Hero Assignment — B13-A7*
+
+## ✨ Key Features
+
+### 📋 Smart Friend Dashboard
+- **Grid Layout:** Beautiful 4-column layout on desktop, optimized for mobile (2-columns).
+- **Status Badges:** Instant visual cues (Overdue, Almost Due, On-track) based on your contact goals.
+- **Loading State:** Smooth skeleton/spinner loading for a premium feel.
+
+### 👤 Detailed Friend Profiles
+- **Two-Column View:** Comprehensive profile details on one side and actionable stats on the other.
+- **Quick Check-In:** Log a **Call**, **Text**, or **Video-chat** instantly with one click.
+- **Relationship Goals:** Set and view specific goals for how often you want to stay in touch.
+
+### 📜 Interactive Timeline (Advanced)
+- **History Tracking:** Automatically logs every interaction with date and time.
+- **Search & Filter:** Search by friend name or filter by interaction type (Call/Text/Video).
+- **Sorting:** Toggle between **Newest First** and **Oldest First** to view your history.
+
+### 📊 Friendship Analytics
+- **Pie Chart Integration:** Visual breakdown of your most common interaction types using **Recharts**.
+- **Data Insights:** Quick summary cards showing total counts of different categories.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+| :--- | :--- |
+| **React 18** | Frontend Framework |
+| **Vite** | Fast Build Tool |
+| **Tailwind CSS** | Premium Styling & Responsiveness |
+| **React Router v6** | Client-side Routing |
+| **Recharts** | Interactive Analytics Charts |
+| **React Icons** | Beautiful vector icons |
+| **React Hot Toast** | Real-time notifications |
+
+---
+
+## 📱 Responsive & Robust
+- **Mobile First:** Designed to look stunning on iPhones, Androids, and tablets.
+- **404 Handling:** Custom branded 404 page for invalid routes.
+- **Reload Friendly:** Configured for Netlify/Vercel to handle history API route reloads perfectly.
+
+---
+
+## ⚙️ Local Setup Instructions
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Eklas-me/Keen-Keeper.git
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 👨‍💻 Author
+**Eklas** — [GitHub Profile](https://github.com/Eklas-me)
+
+*Developed as a special assignment for Programming Hero (B13-A7).*
