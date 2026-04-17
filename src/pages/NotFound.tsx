@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-20 text-center">
-      <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
-      <p className="text-2xl text-gray-600 mb-8">Oops! Page not found.</p>
-      <Link to="/" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-        Go Back Home
+    <div className="flex flex-col items-center justify-center py-24 text-center px-4">
+      <h1 className="text-8xl font-black text-[#205541] mb-4">404</h1>
+      <h2 className="text-2xl font-bold text-slate-800 mb-2">Friend Not Found!</h2>
+      <p className="text-slate-500 mb-10 max-w-md mx-auto">
+        It looks like this relationship doesn't exist yet, or the page has moved to another timeline.
+      </p>
+      <Link to="/" className="px-8 py-3 bg-[#205541] text-white rounded-lg font-bold hover:bg-[#1a4535] transition-all transform hover:scale-105 shadow-md">
+        Back to Dashboard
       </Link>
     </div>
   );
