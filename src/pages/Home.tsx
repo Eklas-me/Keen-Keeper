@@ -53,7 +53,7 @@ const Home = () => {
           <span className="ml-3 text-lg text-gray-600">Loading friends...</span>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-1 sm:px-0">
           {friends.map((friend) => (
             <FriendCard key={friend.id} friend={friend} />
           ))}
