@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { FiClock, FiArchive, FiTrash2, FiEdit2 } from 'react-icons/fi';
+import { FiClock, FiArchive, FiTrash2 } from 'react-icons/fi';
 import callIcon from '../../assets/call.png';
 import textIcon from '../../assets/text.png';
 import videoIcon from '../../assets/video.png';
