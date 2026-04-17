@@ -63,7 +63,7 @@ const FriendDetails = () => {
     localStorage.setItem('timeline', JSON.stringify([interaction, ...existingTimeline]));
 
     // Show toast notification
-    toast.success(`Logged ${type} with ${friend.name}!`);
+    toast.success(`${type} with ${friend.name}!`);
   };
 
   if (loading) return <div className="text-center py-20">Loading profile...</div>;
