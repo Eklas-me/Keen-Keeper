@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiFilter, FiSearch, FiChevronDown } from 'react-icons/fi';
-import callIcon from '../../assets/call.png';
-import textIcon from '../../assets/text.png';
-import videoIcon from '../../assets/video.png';
+import { FiFilter, FiSearch, FiChevronDown, FiPhoneCall, FiMessageSquare, FiVideo } from 'react-icons/fi';
 
 interface TimelineEntry {
   id: number;
@@ -108,20 +105,20 @@ const Timeline = () => {
               const dateObj = new Date(entry.date);
               
               // Icon resolution
-              let iconSrc = textIcon;
-              let iconBg = "bg-blue-100";
+              let Icon = FiMessageSquare;
+              let iconBg = "bg-blue-100 text-blue-600";
               if (entry.type === 'Call') {
-                iconSrc = callIcon;
-                iconBg = "bg-green-100";
+                Icon = FiPhoneCall;
+                iconBg = "bg-green-100 text-green-600";
               } else if (entry.type === 'Video') {
-                iconSrc = videoIcon;
-                iconBg = "bg-purple-100";
+                Icon = FiVideo;
+                iconBg = "bg-purple-100 text-purple-600";
               }
 
               return (
                 <div key={entry.id} className="p-5 sm:p-6 hover:bg-slate-50 transition flex items-center">
                   <div className={`p-3 rounded-full mr-5 shrink-0 ${iconBg} flex items-center justify-center`}>
-                    <img src={iconSrc} alt={entry.type} className="w-5 h-5 object-contain" />
+                    <Icon className="text-xl" />
                   </div>
                   
                   <div className="flex-grow">

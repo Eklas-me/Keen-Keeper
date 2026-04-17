@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { FiPhoneCall, FiMessageSquare, FiVideo, FiClock, FiArchive, FiTrash2, FiEdit2 } from 'react-icons/fi';
+import { FiClock, FiArchive, FiTrash2, FiEdit2 } from 'react-icons/fi';
+import callIcon from '../../assets/call.png';
+import textIcon from '../../assets/text.png';
+import videoIcon from '../../assets/video.png';
 
 interface Friend {
   id: number;
@@ -72,110 +75,113 @@ const FriendDetails = () => {
   else if (friend.status === "on-track") statusColor = "bg-green-100 text-green-800";
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {/* Left Column — Friend Info Card */}
-      <div className="lg:col-span-1 border border-slate-200 bg-white p-6 rounded-2xl shadow-sm text-center flex flex-col h-fit">
-        <img 
-          src={friend.picture} 
-          alt={friend.name} 
-          className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-slate-50"
-        />
-        <h2 className="text-2xl font-bold text-slate-800">{friend.name}</h2>
-        <div className="mt-2">
-          <span className={`text-sm font-semibold px-3 py-1 rounded-full uppercase ${statusColor}`}>
-            {friend.status}
-          </span>
-        </div>
-        
-        <p className="text-slate-500 mt-3 text-sm">{friend.email}</p>
-        
-        <div className="flex flex-wrap gap-2 justify-center mt-4">
-          {friend.tags.map(tag => (
-            <span key={tag} className="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full">
-              {tag}
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      {/* Left Column — Friend Info & Action Buttons */}
+      <div className="lg:col-span-4 flex flex-col gap-3">
+        {/* Info Card */}
+        <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm text-center flex flex-col items-center">
+          <img 
+            src={friend.picture} 
+            alt={friend.name} 
+            className="w-24 h-24 rounded-full mx-auto mb-4 object-cover shadow-sm"
+          />
+          <h2 className="text-[1.35rem] font-bold text-slate-800 mb-3">{friend.name}</h2>
+          
+          <div className="flex flex-col gap-2 items-center mb-6">
+            <span className={`text-[11px] font-bold px-3 py-[4px] rounded-full uppercase tracking-wide ${statusColor}`}>
+              {friend.status}
             </span>
-          ))}
+            <div className="flex flex-wrap gap-2 justify-center">
+              {friend.tags.map(tag => (
+                <span key={tag} className="bg-[#bdf3cf] text-[#1b5e32] text-[10px] font-bold px-3 py-[3px] rounded-full uppercase tracking-wider">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <p className="text-[#64748b] text-[15px] italic mb-2">
+            "{friend.bio}"
+          </p>
+          <p className="text-slate-500 text-[13px]">
+            Preferred: email
+          </p>
         </div>
         
-        <p className="text-slate-600 my-6 text-sm italic py-4 border-y border-slate-100">
-          "{friend.bio}"
-        </p>
+        {/* Action Buttons */}
+        <button className="w-full bg-white border border-slate-200 py-4 px-4 rounded-xl shadow-sm flex justify-center items-center gap-2 hover:bg-slate-50 transition text-slate-700 font-medium text-[15px]">
+          <FiClock className="text-lg" />
+          <span>Snooze 2 Weeks</span>
+        </button>
         
-        <div className="flex flex-col space-y-3 mt-auto">
-          <button className="flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 transition">
-            <FiClock /> <span>Snooze 2 Weeks</span>
-          </button>
-          <button className="flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 transition">
-            <FiArchive /> <span>Archive</span>
-          </button>
-          <button className="flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 transition">
-            <FiTrash2 /> <span>Delete</span>
-          </button>
-        </div>
+        <button className="w-full bg-white border border-slate-200 py-4 px-4 rounded-xl shadow-sm flex justify-center items-center gap-2 hover:bg-slate-50 transition text-slate-700 font-medium text-[15px]">
+          <FiArchive className="text-lg" />
+          <span>Archive</span>
+        </button>
+
+        <button className="w-full bg-white border border-slate-200 py-4 px-4 rounded-xl shadow-sm flex justify-center items-center gap-2 hover:bg-red-50 transition text-[#F04B4B] font-medium text-[15px]">
+          <FiTrash2 className="text-lg" />
+          <span>Delete</span>
+        </button>
       </div>
 
       {/* Right Column */}
-      <div className="lg:col-span-2 space-y-6">
+      <div className="lg:col-span-8 flex flex-col gap-5">
         
-        {/* Stats Cards (3 cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center">
-            <p className="text-slate-500 text-sm font-medium mb-1">Days Since Contact</p>
-            <p className="text-3xl font-bold text-slate-800">{friend.days_since_contact}</p>
+        {/* Stats Cards (3 items) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="bg-white py-8 px-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+            <div className="text-[2rem] font-bold text-[#1f4a38] leading-none mb-3">{friend.days_since_contact}</div>
+            <div className="text-[14px] text-slate-500 font-medium">Days Since Contact</div>
           </div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center">
-            <p className="text-slate-500 text-sm font-medium mb-1">Goal (Days)</p>
-            <p className="text-3xl font-bold text-slate-800">{friend.goal}</p>
+          <div className="bg-white py-8 px-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+            <div className="text-[2rem] font-bold text-[#1f4a38] leading-none mb-3">{friend.goal}</div>
+            <div className="text-[14px] text-slate-500 font-medium">Goal (Days)</div>
           </div>
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center">
-            <p className="text-slate-500 text-sm font-medium mb-1">Next Due Date</p>
-            <p className="text-xl font-bold text-slate-800 mt-2">{friend.next_due_date}</p>
+          <div className="bg-white py-8 px-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+            <div className="text-[1.6rem] font-bold text-[#1f4a38] leading-none mb-3">{friend.next_due_date}</div>
+            <div className="text-[14px] text-slate-500 font-medium">Next Due</div>
           </div>
         </div>
 
         {/* Relationship Goal Card */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-bold text-slate-800">Relationship Goal</h3>
-            <p className="text-slate-500 text-sm mt-1">Connect every {friend.goal} days to stay on-track.</p>
+        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div className="flex justify-between items-center mb-5">
+            <h3 className="text-[1.15rem] font-bold text-[#1f4a38]">Relationship Goal</h3>
+            <button className="bg-slate-50 border border-slate-200 text-slate-700 px-5 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-100 transition">
+              Edit
+            </button>
           </div>
-          <button className="bg-slate-50 hover:bg-slate-100 p-3 rounded-lg text-slate-600 transition">
-            <FiEdit2 />
-          </button>
+          <p className="text-slate-600 text-[15px]">
+            Connect every <span className="font-bold text-[#111827]">{friend.goal} days</span>
+          </p>
         </div>
 
         {/* Quick Check-In Card */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-slate-800">
-          <h3 className="text-lg font-bold mb-1">Quick Check-In</h3>
-          <p className="text-slate-500 mb-6 text-sm">Reach out now and log the interaction instantly.</p>
+        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <h3 className="text-[1.15rem] font-bold text-[#1f4a38] mb-6">Quick Check-In</h3>
           
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <button 
               onClick={() => handleInteraction('Call')}
-              className="bg-slate-50 hover:bg-slate-100 border border-slate-100 transition rounded-xl p-4 flex flex-col items-center justify-center space-y-2 group text-slate-700"
+              className="bg-[#f8fafc] border border-slate-200 hover:bg-slate-100 transition rounded-xl py-6 flex flex-col items-center gap-3 text-slate-700"
             >
-              <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-full group-hover:scale-110 transition-transform text-[#205541]">
-                <FiPhoneCall className="text-xl" />
-              </div>
-              <span className="font-medium text-sm">Call</span>
+              <img src={callIcon} alt="Call" className="w-6 h-6 object-contain" />
+              <span className="font-medium text-[15px]">Call</span>
             </button>
             <button 
                onClick={() => handleInteraction('Text')}
-              className="bg-slate-50 hover:bg-slate-100 border border-slate-100 transition rounded-xl p-4 flex flex-col items-center justify-center space-y-2 group text-slate-700"
+              className="bg-[#f8fafc] border border-slate-200 hover:bg-slate-100 transition rounded-xl py-6 flex flex-col items-center gap-3 text-slate-700"
             >
-              <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-full group-hover:scale-110 transition-transform text-[#205541]">
-                <FiMessageSquare className="text-xl" />
-              </div>
-              <span className="font-medium text-sm">Text</span>
+              <img src={textIcon} alt="Text" className="w-6 h-6 object-contain" />
+              <span className="font-medium text-[15px]">Text</span>
             </button>
             <button 
                onClick={() => handleInteraction('Video')}
-              className="bg-slate-50 hover:bg-slate-100 border border-slate-100 transition rounded-xl p-4 flex flex-col items-center justify-center space-y-2 group text-slate-700"
+              className="bg-[#f8fafc] border border-slate-200 hover:bg-slate-100 transition rounded-xl py-6 flex flex-col items-center gap-3 text-slate-700"
             >
-              <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-full group-hover:scale-110 transition-transform text-[#205541]">
-                <FiVideo className="text-xl" />
-              </div>
-              <span className="font-medium text-sm">Video</span>
+              <img src={videoIcon} alt="Video" className="w-6 h-6 object-contain" />
+              <span className="font-medium text-[15px]">Video</span>
             </button>
           </div>
         </div>

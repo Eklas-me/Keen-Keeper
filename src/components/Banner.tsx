@@ -14,7 +14,7 @@ const Banner = () => {
       </button>
       
       {/* 4 Summary Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
         <div className="bg-blue-50 p-4 rounded-lg flex flex-col items-center justify-center border border-blue-100">
           <FiUsers className="text-2xl text-blue-600 mb-2" />
           <p className="text-sm font-medium text-gray-600">Total Friends</p>
