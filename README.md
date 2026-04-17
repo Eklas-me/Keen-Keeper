@@ -1,10 +1,10 @@
 # 👥 KeenKeeper — Nurture Your Friendships
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-id/deploy-status)](https://keen-keeper.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9a0495e7-2235-46ed-9398-9249c5ca0f00/deploy-status)](https://keenkeeper143.netlify.app/)
 
 **KeenKeeper** is a sleek, modern Friendship Management Tool built with **React** and **Tailwind CSS**. It helps users stay connected with their friends by tracking interactions, setting relationship goals, and providing insightful analytics about their social habits.
 
-## 🚀 [Live Demo](https://keen-keeper.netlify.app)
+## 🚀 [Live Demo](https://keenkeeper143.netlify.app/)
 
 ---
 
