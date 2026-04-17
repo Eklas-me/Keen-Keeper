@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Connor",
+    "picture": "https://i.pravatar.cc/150?u=sarah",
+    "email": "sarah.c@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["high school", "close friend"],
+    "bio": "Known since 10th grade. Always there for the tough times.",
+    "goal": 14,
+    "next_due_date": "2026-04-13"
+  },
+  {
+    "id": 2,
+    "name": "David Smith",
+    "picture": "https://i.pravatar.cc/150?u=david",
+    "email": "david.smith@example.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["college", "roommate"],
+    "bio": "College roommate. We play games every weekend.",
+    "goal": 7,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 3,
+    "name": "Emily Chen",
+    "picture": "https://i.pravatar.cc/150?u=emily",
+    "email": "emily.chen@example.com",
+    "days_since_contact": 28,
+    "status": "almost due",
+    "tags": ["work", "mentor"],
+    "bio": "Helped me get my first job. Very insightful.",
+    "goal": 30,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 4,
+    "name": "Michael Johnson",
+    "picture": "https://i.pravatar.cc/150?u=michael",
+    "email": "mike.j@example.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["gym", "neighbor"],
+    "bio": "Gym buddy. We push each other to do better.",
+    "goal": 30,
+    "next_due_date": "2026-03-15"
+  },
+  {
+    "id": 5,
+    "name": "Jessica Williams",
+    "picture": "https://i.pravatar.cc/150?u=jessica",
+    "email": "jess.wills@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["book club", "creative"],
+    "bio": "Shares the same taste in sci-fi novels.",
+    "goal": 14,
+    "next_due_date": "2026-04-29"
+  },
+  {
+    "id": 6,
+    "name": "Daniel Brown",
+    "picture": "https://i.pravatar.cc/150?u=daniel",
+    "email": "dan.brown@example.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["cousin", "family"],
+    "bio": "Favorite cousin. Always fun at family gatherings.",
+    "goal": 14,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 7,
+    "name": "Olivia Taylor",
+    "picture": "https://i.pravatar.cc/150?u=olivia",
+    "email": "olivia.t@example.com",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": ["travel", "adventurer"],
+    "bio": "Met during my trip to Japan. We plan trips together.",
+    "goal": 30,
+    "next_due_date": "2026-02-15"
+  },
+  {
+    "id": 8,
+    "name": "James Martinez",
+    "picture": "https://i.pravatar.cc/150?u=james",
+    "email": "james.m@example.com",
+    "days_since_contact": 1,
+    "status": "on-track",
+    "tags": ["band", "musician"],
+    "bio": "Plays the bass in our local band. Great energy.",
+    "goal": 7,
+    "next_due_date": "2026-04-23"
+  }
+]
